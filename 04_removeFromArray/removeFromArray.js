@@ -1,10 +1,17 @@
-const removeFromArray = function(inArray, toRemove) {
-    // remove specific items from array
-    let beforeRemoveElement = inArray.slice(0, (toRemove - 1));
+const removeFromArray = function(inArray, ...args) {
+    
+    // create a new array that is empty
+    const outArrayWithoutElement = [];
+    
+    // go through the array
+    inArray.forEach((item) => {
+        if (!args.includes(item)) {
+            outArrayWithoutElement.push(item);
+        }
+    });
 
-    let afterRemoveElement = inArray(toRemove);
-
-    let outArrayWithoutElement = beforeRemoveElement.concat(afterRemoveElement);
+    
+    
 
     return outArrayWithoutElement;
 };
